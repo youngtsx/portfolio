@@ -1,8 +1,10 @@
-var express = require('express');
-var app = express();
+const argv = require('minimist')(process.argv.slice(2));
+const express = require('express');
+const app = express();
 app.all('*', function (request, response, next) {
     console.log(request.method + ' to path ' + request.path);
     next();
 });
-app.use(express.static(__dirname + '/static'));
-app.listen(8080, () => console.log(`listening on port 8080`));
+let root = (typeof argv["rootdir"] != "undefined")?argv["rootdir"] : ".";
+app.use(express.static( root ));
+let server = app.listen(8080, () => console.log(`listening on ${server.address().address} port ${server.address().port} rootdir ${root}`));
