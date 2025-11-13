@@ -1,11 +1,13 @@
-#nav,
-a,
-h1,
-h2 {
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
+
+nav, a, h1, h2 {
     margin: 0;
     padding: 0;
     border: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
+    text-decoration: none;
 }
 
 ul {
@@ -18,18 +20,52 @@ ul {
     display: flex;
 }
 
-#nav ul li {
-    float: left;
-}
-
-#nav ul li a {
+nav ul li a {
     text-align: center;
     text-decoration: none;
-    color: white;
+    color: rgba(255, 255, 255, 0.603);
     display: block;
     padding: 12px;
 }
 
-#nav a:hover {
+nav a:hover {
     background-color: #111111;
+}
+
+.box {
+    font-size: x-large;
+}
+
+h1,
+h2,
+div.container,
+div.box,
+div.headshot{
+    color: inherit;
+    font-weight: 600;
+    text-align: center;
+    padding: 1em 4em 1em 4em;
+    background-color: #D3D3D3;
+    margin: 0 auto;
+
+}
+
+.headshot{
+    height: 500px;
+    width: 400px;
+    display: flex;
+
+}
+
+div.container {
+    max-width: fit-content;
+    border-radius: 25px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+}
+
+h1,
+h2 {
+    padding: 0 5em 0 5em;
 }
